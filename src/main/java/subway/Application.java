@@ -1,6 +1,10 @@
 package subway;
 
 import subway.controller.SubwayController;
+import subway.domain.line.Line;
+import subway.domain.line.LineRepository;
+import subway.domain.station.Station;
+import subway.domain.station.StationRepository;
 import subway.service.SubwayService;
 import subway.view.InputView;
 import subway.view.OutputView;

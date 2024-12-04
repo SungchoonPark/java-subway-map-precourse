@@ -1,10 +1,13 @@
 package subway.service;
 
-public class SubwayService {
+import subway.domain.station.Station;
+import subway.domain.station.StationRepository;
 
+public class SubwayService {
     // 역 추가
-    public void addStation() {
+    public void addStation(String stationName) {
         // Todo : 역 추가
+        StationRepository.addStation(new Station(stationName));
     }
 
     // 역 삭제

@@ -4,8 +4,9 @@ public class Line {
     private String name;
     private LineStation stations;
 
-    public Line(String name) {
+    public Line(String name, LineStation stations) {
         this.name = name;
+        this.stations = stations;
     }
 
     public String getName() {

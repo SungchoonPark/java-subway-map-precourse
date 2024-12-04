@@ -6,4 +6,7 @@ public class OutputView {
         System.out.println(message);
     }
 
+    public void printInfoMessage(String infoMessage) {
+        System.out.println(infoMessage);
+    }
 }
