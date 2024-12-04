@@ -2,6 +2,7 @@ package subway.service;
 
 import subway.domain.station.Station;
 import subway.domain.station.StationRepository;
+import subway.message.ExceptionMessage;
 
 public class SubwayService {
     // 역 추가
@@ -11,8 +12,13 @@ public class SubwayService {
     }
 
     // 역 삭제
-    public void deleteStation() {
+    public void deleteStation(String deleteStationName) {
         // Todo : 역 삭제
+        boolean isRemoved = StationRepository.deleteStation(deleteStationName);
+
+        if (!isRemoved) {
+            throw new IllegalArgumentException(ExceptionMessage.NOT_EXIST_STATION.getMessage());
+        }
     }
 
     // 역 조회

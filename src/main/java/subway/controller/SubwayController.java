@@ -83,6 +83,9 @@ public class SubwayController {
 
                 if (functionNum.equals("2")) {
                     // Todo : 역 삭제
+                    String deleteStationName = inputView.readDeleteStationName();
+                    subwayService.deleteStation(deleteStationName);
+                    outputView.printInfoMessage(InfoMessage.DELETE_STATION_SUCCESS.getMessage());
                 }
 
                 if (functionNum.equals("3")) {
