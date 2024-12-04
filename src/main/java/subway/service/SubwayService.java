@@ -4,6 +4,8 @@ import subway.domain.station.Station;
 import subway.domain.station.StationRepository;
 import subway.message.ExceptionMessage;
 
+import java.util.List;
+
 public class SubwayService {
     // 역 추가
     public void addStation(String stationName) {
@@ -22,8 +24,9 @@ public class SubwayService {
     }
 
     // 역 조회
-    public void getStations() {
+    public List<Station> getStations() {
         // Todo : 역 조회
+        return StationRepository.stations();
     }
 
     // 노선 추가

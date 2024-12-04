@@ -1,9 +1,12 @@
 package subway.controller;
 
+import subway.domain.station.Station;
 import subway.message.InfoMessage;
 import subway.service.SubwayService;
 import subway.view.InputView;
 import subway.view.OutputView;
+
+import java.util.List;
 
 public class SubwayController {
     private final InputView inputView;
@@ -41,6 +44,7 @@ public class SubwayController {
                 if (functionNum.equals("Q")) {
                     // 종료
                     // Todo : OUtputview에서 종료 메시지 출력 -> break;
+                    break;
                 }
             } catch (IllegalArgumentException e) {
                 outputView.printExceptionMessage(e.getMessage());
@@ -78,7 +82,6 @@ public class SubwayController {
                     String registerStationName = inputView.readRegisterStationName();
                     subwayService.addStation(registerStationName);
                     outputView.printInfoMessage(InfoMessage.REGIST_STATION_SUCCESS.getMessage());
-
                 }
 
                 if (functionNum.equals("2")) {
@@ -90,6 +93,8 @@ public class SubwayController {
 
                 if (functionNum.equals("3")) {
                     // Todo : 역 조회
+                    List<Station> stations = subwayService.getStations();
+                    outputView.printStations(stations);
                 }
 
                 run();

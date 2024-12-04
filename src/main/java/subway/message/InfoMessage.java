@@ -16,4 +16,8 @@ public enum InfoMessage {
     public String getMessage() {
         return COMMON_INFO.message + message;
     }
+
+    public static String makeInfoMessage(String message) {
+        return COMMON_INFO.message + message;
+    }
 }
