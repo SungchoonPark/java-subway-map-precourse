@@ -16,10 +16,17 @@ public class SubwayController {
     }
 
     public void run() {
+        String functionNum = readFunctionNum();
 
     }
 
-    private void printInitialMessage() {
-
+    private String readFunctionNum() {
+        while (true) {
+            try {
+                return inputView.readFunctionNum();
+            } catch (IllegalArgumentException e) {
+                outputView.printExceptionMessage(e.getMessage());
+            }
+        }
     }
 }
